@@ -4,11 +4,13 @@ from flask_pymongo import PyMongo
 import numpy as np
 from tensorflow.keras.models import load_model
 from joblib import load
+from flask_cors import CORS
 import random
 
 from login_signup import login_user, register_user
 
 app=Flask(__name__)
+CORS(app)
 
 # Load the model, test data, and label encoder
 model = load_model('emotion_detection_model.h5')
